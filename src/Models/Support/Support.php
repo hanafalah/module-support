@@ -1,0 +1,33 @@
+<?php
+
+namespace Hanafalah\ModuleSupport\Models\Support;
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Hanafalah\LaravelHasProps\Concerns\HasProps;
+use Hanafalah\LaravelSupport\Models\BaseModel;
+use Hanafalah\ModuleSupport\Resources\Support\{
+    ViewSupport,
+    ShowSupport
+};
+
+class Support extends BaseModel
+{
+    use HasProps, SoftDeletes;
+
+    public $list = ['id', 'name', 'reference_type' , 'reference_id', 'props'];
+    protected $casts = [
+        'name' => 'string'
+    ];
+
+    public function getViewResource()
+    {
+        return ViewSupport::class;
+    }
+
+    public function getShowResource()
+    {
+        return ShowSupport::class;
+    }
+
+    public function reference(){return $this->morphTo();}
+}

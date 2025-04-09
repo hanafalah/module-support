@@ -1,0 +1,24 @@
+{
+    "name": "hanafalah/module-support",
+    "autoload": {
+        "psr-4": {
+            "Hanafalah\\ModuleSupport\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hamzah",
+            "email": "hamzahnafalah@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hanafalah\\ModuleSupport\\ModuleSupportServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "hanafalah/laravel-support": "1.x-dev as 1.0"
+    }
+}
