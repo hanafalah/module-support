@@ -21,7 +21,13 @@ class ViewSupport extends ApiResource
       'created_at' => $this->created_at,
       'updated_at' => $this->updated_at
     ];
-
+    $paths_urls = [];
+    if (isset($this->paths)){
+      foreach ($this->paths as $path){
+        $paths_urls[] = asset('storage/FILES/'.$path);
+      }
+    }
+    $arr['url_paths'] = $paths_urls;
     return $arr;
   }
 }
