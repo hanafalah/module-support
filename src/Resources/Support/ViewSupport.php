@@ -23,9 +23,7 @@ class ViewSupport extends ApiResource
     ];
     $paths_urls = [];
     if (isset($this->paths)){
-      foreach ($this->paths as $path){
-        $paths_urls[] = asset('storage/FILES/'.$path);
-      }
+      foreach ($this->paths as $path) $paths_urls[] = $this->getFullUrl($path);
     }
     $arr['url_paths'] = $paths_urls;
     return $arr;

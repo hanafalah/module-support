@@ -4,6 +4,7 @@ namespace Hanafalah\ModuleSupport\Models\Support;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Hanafalah\LaravelHasProps\Concerns\HasProps;
+use Hanafalah\LaravelSupport\Concerns\Support\HasFileUpload;
 use Hanafalah\LaravelSupport\Models\BaseModel;
 use Hanafalah\ModuleSupport\Resources\Support\{
     ViewSupport,
@@ -12,7 +13,7 @@ use Hanafalah\ModuleSupport\Resources\Support\{
 
 class Support extends BaseModel
 {
-    use HasProps, SoftDeletes;
+    use HasProps, SoftDeletes, HasFileUpload;
 
     public $list = ['id', 'name', 'reference_type' , 'reference_id', 'props'];
     protected $casts = [

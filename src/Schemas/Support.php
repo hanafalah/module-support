@@ -63,10 +63,6 @@ class Support extends PackageManagement implements ContractsSupport
         });
     }
 
-    protected function getFileNameAttribute(): string{
-        return 'current_file';
-    }
-
     protected function pushFiles(array $paths): array{
         return $this->setupFiles($paths);
     }
