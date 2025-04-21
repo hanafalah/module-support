@@ -7,6 +7,7 @@ use Hanafalah\ModuleSupport\{
 };
 
 return [
+    'namespace' => 'Hanafalah\\ModuleSupport',
     'app' => [
         'contracts' => [
         ],
@@ -17,7 +18,10 @@ return [
     'libs' => [
         'model' => 'Models',
         'contract' => 'Contracts',
-        'schema' => 'Schemas'
+        'schema' => 'Schemas',
+        'database' => 'Database',
+        'data' => 'Data',
+        'resource' => 'Resources'
     ],
     'database' => [
         'models' => [

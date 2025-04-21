@@ -25,6 +25,14 @@ class SupportData extends Data implements DataSupportData
     #[MapName('reference_id')]
     public mixed $reference_id;
 
+    #[MapInputName('author_type')]
+    #[MapName('author_type')]
+    public string $author_type;
+
+    #[MapInputName('author_id')]
+    #[MapName('author_id')]
+    public mixed $author_id;
+
     #[MapInputName('paths')]
     #[MapName('paths')]
     public ?array $paths = [];
