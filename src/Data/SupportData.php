@@ -41,6 +41,7 @@ class SupportData extends Data implements DataSupportData
     #[MapName('props')]
     public mixed $props = [];
 
+
     public static function after(SupportData $data): SupportData{
         $data->props['prop_author'] = [
             'id'   => null,
