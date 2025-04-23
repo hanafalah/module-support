@@ -40,4 +40,19 @@ class SupportData extends Data implements DataSupportData
     #[MapInputName('props')]
     #[MapName('props')]
     public mixed $props = [];
+
+    public static function after(SupportData $data): SupportData{
+        $data->props['prop_author'] = [
+            'id'   => null,
+            'name' => null
+        ];
+        if (isset($data->author_type,$data->author_id)){
+            $reference = static::new()->{$data->author_type.'Model'}()::findOrFail($data->author_id);
+            $data->props['prop_author'] = [
+                'id'   => $reference->getKey(),
+                'name' => $reference->name ?? null
+            ];
+        }
+        return $data;
+    }
 }
