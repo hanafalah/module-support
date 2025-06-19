@@ -12,6 +12,7 @@ use Hanafalah\ModuleSupport\Contracts\Data\SupportData;
 
 /**
  * @see \Hanafalah\ModuleSupport\Schemas\Support
+ * @method self setParamLogic(string $logic, bool $search_value = false, ?array $optionals = [])
  * @method self conditionals(mixed $conditionals)
  * @method bool deleteSupport()
  * @method bool prepareDeleteSupport(? array $attributes = null)
