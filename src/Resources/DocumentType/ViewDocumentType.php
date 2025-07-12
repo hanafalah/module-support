@@ -2,9 +2,9 @@
 
 namespace Hanafalah\ModuleSupport\Resources\DocumentType;
 
-use Hanafalah\LaravelSupport\Resources\ApiResource;
+use Hanafalah\LaravelSupport\Resources\Unicode\ViewUnicode;
 
-class ViewDocumentType extends ApiResource
+class ViewDocumentType extends ViewUnicode
 {
   /**
    * Transform the resource into an array.
@@ -14,7 +14,8 @@ class ViewDocumentType extends ApiResource
    */
   public function toArray(\Illuminate\Http\Request $request): array
   {
-    $arr = parent::toArray($request);
+    $arr = [];
+    $arr = $this->mergeArray(parent::toArray($request),$arr);
     return $arr;
   }
 }

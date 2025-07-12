@@ -7,7 +7,7 @@ use Hanafalah\LaravelSupport\Supports\PackageManagement;
 
 class BaseModuleSupport extends PackageManagement implements DataManagement
 {
-    /** @var array */
+    protected $__config_name = 'module-support';
     protected $__module_support_config = [];
 
     /**
@@ -19,6 +19,6 @@ class BaseModuleSupport extends PackageManagement implements DataManagement
      */
     public function __construct()
     {
-        $this->setConfig('module-support', $this->__module_support_config);
+        $this->setConfig($this->__config_name, $this->__module_support_config);
     }
 }

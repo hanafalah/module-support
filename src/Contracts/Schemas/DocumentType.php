@@ -3,6 +3,7 @@
 namespace Hanafalah\ModuleSupport\Contracts\Schemas;
 
 use Hanafalah\LaravelSupport\Contracts\Data\PaginateData;
+use Hanafalah\LaravelSupport\Contracts\Schemas\Unicode;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -19,13 +20,13 @@ use Hanafalah\ModuleSupport\Contracts\Data\DocumentTypeData;
  * @method array showDocumentType(?Model $model = null)
  * @method Collection prepareViewDocumentTypeList()
  * @method array viewDocumentTypeList()
+ * @method array storeDocumentType(?DocumentTypeData $document_type_dto = null)
  * @method LengthAwarePaginator prepareViewDocumentTypePaginate(PaginateData $paginate_dto)
  * @method array viewDocumentTypePaginate(?PaginateData $paginate_dto = null)
  */
 
-interface DocumentType extends DataManagement
+interface DocumentType extends Unicode
 {
     public function prepareStoreDocumentType(DocumentTypeData $document_type_dto): Model;
-    public function storeDocumentType(?DocumentTypeData $document_type_dto = null): array;
     public function documentType(mixed $conditionals = null): Builder;
 }

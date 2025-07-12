@@ -2,4 +2,6 @@
 
 namespace Hanafalah\ModuleSupport\Contracts\Data;
 
-interface DocumentTypeData {}
+use Hanafalah\LaravelSupport\Contracts\Data\UnicodeData;
+
+interface DocumentTypeData extends UnicodeData {}

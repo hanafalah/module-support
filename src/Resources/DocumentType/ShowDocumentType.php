@@ -2,6 +2,8 @@
 
 namespace Hanafalah\ModuleSupport\Resources\DocumentType;
 
+use Hanafalah\LaravelSupport\Resources\Unicode\ShowUnicode;
+
 class ShowDocumentType extends ViewDocumentType
 {
   /**
@@ -13,7 +15,8 @@ class ShowDocumentType extends ViewDocumentType
   public function toArray(\Illuminate\Http\Request $request): array
   {
     $arr = [];
-    $arr = $this->mergeArray(parent::toArray($request),$arr);
+    $show = $this->resolveNow(new ShowUnicode($this));
+    $arr = $this->mergeArray(parent::toArray($request),$show,$arr);
     return $arr;
   }
 }
