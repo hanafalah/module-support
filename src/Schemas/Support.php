@@ -14,7 +14,7 @@ class Support extends PackageManagement implements ContractsSupport
 
     protected string $__entity = 'Support';
     protected mixed $__order_by_created_at = false; //asc, desc, false
-    public static $support_model;
+    public $support_model;
     public mixed $current_file;
 
     protected array $__cache = [
@@ -30,7 +30,7 @@ class Support extends PackageManagement implements ContractsSupport
     }
 
     public function getCurrentFiles(): array{
-        return static::$support_model->paths ?? [];
+        return $this->support_model->paths ?? [];
     }
 
     public function prepareStoreSupport(SupportData $support_dto): Model{

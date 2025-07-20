@@ -11,7 +11,7 @@ use Hanafalah\ModuleSupport\Contracts\Data\DocumentTypeData;
 class DocumentType extends Unicode implements ContractsDocumentType
 {
     protected string $__entity = 'DocumentType';
-    public static $document_type_model;
+    public $document_type_model;
     protected mixed $__order_by_created_at = false; //asc, desc, false
 
     protected array $__cache = [
@@ -24,7 +24,7 @@ class DocumentType extends Unicode implements ContractsDocumentType
 
     public function prepareStoreDocumentType(DocumentTypeData $document_type_dto): Model{
         $model = $this->prepareStoreUnicode($document_type_dto);
-        return static::$document_type_model = $model;
+        return $this->document_type_model = $model;
     }
 
     public function documentType(mixed $conditionals = null): Builder{
